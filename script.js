@@ -64,3 +64,43 @@ function updateTotalValue(pet, modifier) {
     // Update the total value displayed on the page
     document.getElementById('total-value').textContent = totalValue;
 }
+// Assume petsData is from items.js
+function createPetCard(pet) {
+    const card = document.createElement('div');
+    card.classList.add('pet-option');
+
+    const name = document.createElement('div');
+    name.className = 'pet-name';
+    name.textContent = pet.name;
+
+    const value = document.createElement('div');
+    value.className = 'pet-value';
+    value.textContent = `Base Value: $${pet.baseValue}`;
+
+    card.appendChild(name);
+    card.appendChild(value);
+
+    // Add click event
+    card.addEventListener('click', () => {
+        addPetToOffer(pet); // You define this
+        closePetMenu();     // Optional
+    });
+
+    return card;
+}
+
+function populatePetGrid() {
+    const petGrid = document.getElementById('pet-grid');
+    petGrid.innerHTML = '';
+
+    petsData.forEach(pet => {
+        const petCard = createPetCard(pet);
+        petGrid.appendChild(petCard);
+    });
+}
+
+// Call this on open
+document.getElementById('add-pet-btn').addEventListener('click', () => {
+    document.getElementById('pet-selection-menu').classList.remove('hidden');
+    populatePetGrid();
+});
