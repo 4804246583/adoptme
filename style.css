@@ -27,7 +27,7 @@ body {
 }
 
 header {
-    background-color: #EC407A;
+    background-color: #EC407A;  /* Bright pink for header */
     color: white;
     padding: 20px;
     border-radius: 15px;
@@ -52,7 +52,7 @@ header p {
 
 #your-offer, #their-offer {
     width: 45%;
-    background-color: #FF80AB;
+    background-color: #FF80AB;  /* Light pink for the offer boxes */
     padding: 20px;
     border-radius: 15px;
 }
@@ -73,7 +73,7 @@ header p {
 }
 
 button {
-    background-color: #EC407A;
+    background-color: #EC407A;  /* Bright pink for buttons */
     color: white;
     padding: 12px 20px;
     font-size: 16px;
@@ -85,11 +85,11 @@ button {
 }
 
 button:hover {
-    background-color: #D81B60;
+    background-color: #D81B60;  /* Darker pink for hover effect */
 }
 
 #pet-selection-menu, #modifier-selection-menu {
-    background-color: #FF80AB;
+    background-color: #FF80AB;  /* Same light pink for selection menus */
     padding: 20px;
     border-radius: 15px;
     position: fixed;
@@ -111,8 +111,8 @@ button:hover {
 }
 
 .modifier {
-    background-color: #F8BBD0;
-    color: #5A2D6D;
+    background-color: #F8BBD0;  /* Soft pink for modifiers */
+    color: #5A2D6D;  /* Dark pink text */
     padding: 10px 20px;
     border-radius: 8px;
     font-size: 16px;
@@ -120,12 +120,12 @@ button:hover {
 }
 
 .modifier:hover {
-    background-color: #EC407A;
+    background-color: #EC407A;  /* Darker pink on hover for modifiers */
     color: white;
 }
 
 footer {
     margin-top: 50px;
     font-size: 14px;
-    color: #7B1FA2;
+    color: #7B1FA2;  /* Deep pink footer */
 }
