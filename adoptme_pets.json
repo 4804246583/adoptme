@@ -1,0 +1,52 @@
+[
+    {
+        "name": "Aussie Egg",
+        "id": "aussie_egg",
+        "img": "https://raw.githubusercontent.com/AdoptMeAPI/pets/master/images/aussie_egg.png",
+        "base_value": 500, 
+        "fly_value": 300,
+        "ride_value": 300,
+        "neon_value": 1000,
+        "mega_value": 5000
+    },
+    {
+        "name": "Axolotl",
+        "id": "axolotl",
+        "img": "https://raw.githubusercontent.com/AdoptMeAPI/pets/master/images/axolotl.png",
+        "base_value": 400,
+        "fly_value": 200,
+        "ride_value": 200,
+        "neon_value": 800,
+        "mega_value": 4000
+    },
+    {
+        "name": "Bee",
+        "id": "bee",
+        "img": "https://elvebredd.com/images/pets/Bee.png",
+        "base_value": 0.50,
+        "fly_value": 0.80,
+        "ride_value": 0.70,
+        "neon_value": 2.50,
+        "mega_value": 11
+    },
+    {
+        "name": "Bat",
+        "id": "bat",
+        "img": "https://raw.githubusercontent.com/AdoptMeAPI/pets/master/images/bat.png",
+        "base_value": 300,
+        "fly_value": 150,
+        "ride_value": 150,
+        "neon_value": 600,
+        "mega_value": 3000
+    },
+    {
+        "name": "Bat Dragon",
+        "id": "bat_dragon",
+        "img": "https://raw.githubusercontent.com/AdoptMeAPI/pets/master/images/bat_dragon.png",
+        "base_value": 15000,
+        "fly_value": 3000,
+        "ride_value": 3000,
+        "neon_value": 60000,
+        "mega_value": 100000
+    }
+]
