@@ -1,53 +1,66 @@
-let itemData = {};  // items.js already contains the item values
+// Fetch the pets data from the JSON file
+fetch('adoptme_pets.json')
+    .then(response => response.json())
+    .then(pets => {
+        // Display pets in the grid
+        displayPetGrid(pets);
+    })
+    .catch(error => console.log('Error fetching pets:', error));
 
-function addItem(side) {
-  const container = document.getElementById(side + "Items");
-  const row = document.createElement("div");
-  row.className = "item-row";
-  row.innerHTML = `
-    <select class="item-select">
-      ${Object.keys(itemData)
-        .map((item) => `<option value="${item}">${item}</option>`)
-        .join("")}
-    </select>
-    <label><input type="checkbox" class="mod-fly" /> Fly</label>
-    <label><input type="checkbox" class="mod-ride" /> Ride</label>
-    <label><input type="checkbox" class="mod-neon" /> Neon</label>
-    <label><input type="checkbox" class="mod-mega" /> Mega</label>
-  `;
-  container.appendChild(row);
+// Function to display pets in the grid
+function displayPetGrid(pets) {
+    const petGrid = document.getElementById('pet-grid');
+    petGrid.innerHTML = ''; // Clear any previous pets
+    pets.forEach(pet => {
+        const petDiv = document.createElement('div');
+        petDiv.classList.add('pet-image');
+        petDiv.innerHTML = `
+            <img src="${pet.img}" alt="${pet.name}" data-id="${pet.id}" />
+            <p>${pet.name}</p>
+            <p><strong>Base Value:</strong> $${pet.base_value}</p>
+        `;
+        petGrid.appendChild(petDiv);
+
+        // Add click listener to select a pet
+        petDiv.querySelector('img').addEventListener('click', () => selectPet(pet));
+    });
 }
 
-function getTotalValue(containerId) {
-  const container = document.getElementById(containerId);
-  let total = 0;
-  const rows = container.querySelectorAll(".item-row");
-  rows.forEach((row) => {
-    const item = row.querySelector(".item-select").value;
-    const fly = row.querySelector(".mod-fly").checked;
-    const ride = row.querySelector(".mod-ride").checked;
-    const neon = row.querySelector(".mod-neon").checked;
-    const mega = row.querySelector(".mod-mega").checked;
-
-    let value = itemData[item] || 0;
-    if (fly) value += 5;
-    if (ride) value += 5;
-    if (neon) value *= 2;
-    if (mega) value *= 4;
-    total += value;
-  });
-  return total;
+// Function to handle pet selection
+let selectedPet = null;
+function selectPet(pet) {
+    selectedPet = pet;
+    showModifiers(pet);
 }
 
-function calculateTrade() {
-  const yourValue = getTotalValue("yourItems");
-  const theirValue = getTotalValue("theirItems");
-  const result = document.getElementById("result");
-  if (yourValue > theirValue + 10) {
-    result.textContent = "LOSE 😢";
-  } else if (yourValue < theirValue - 10) {
-    result.textContent = "WIN 🎉";
-  } else {
-    result.textContent = "FAIR 🤝";
-  }
+// Function to show the available modifiers and their values
+function showModifiers(pet) {
+    const modifiersContainer = document.getElementById('modifiers-container');
+    modifiersContainer.innerHTML = `
+        <p><strong>Modifiers for ${pet.name}:</strong></p>
+        <button id="fly">Fly (+$${pet.fly_value})</button>
+        <button id="ride">Ride (+$${pet.ride_value})</button>
+        <button id="neon">Neon (+$${pet.neon_value})</button>
+        <button id="mega">Mega (+$${pet.mega_value})</button>
+        <p><strong>Total Value: $<span id="total-value">${pet.base_value}</span></strong></p>
+    `;
+
+    // Add event listeners for each modifier button
+    document.getElementById('fly').addEventListener('click', () => updateTotalValue(pet, 'fly'));
+    document.getElementById('ride').addEventListener('click', () => updateTotalValue(pet, 'ride'));
+    document.getElementById('neon').addEventListener('click', () => updateTotalValue(pet, 'neon'));
+    document.getElementById('mega').addEventListener('click', () => updateTotalValue(pet, 'mega'));
+}
+
+// Function to update the total value based on selected modifiers
+function updateTotalValue(pet, modifier) {
+    let totalValue = pet.base_value;
+
+    if (modifier === 'fly') totalValue += pet.fly_value;
+    if (modifier === 'ride') totalValue += pet.ride_value;
+    if (modifier === 'neon') totalValue += pet.neon_value;
+    if (modifier === 'mega') totalValue += pet.mega_value;
+
+    // Update the total value displayed on the page
+    document.getElementById('total-value').textContent = totalValue;
 }
