@@ -3,33 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adopt Me Pet Calculator</title>
+    <title>Pet Selection</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="container">
-        <h1>Adopt Me Pet Calculator</h1>
-
+        <h1>Select Your Pet</h1>
         <div id="pet-selection">
-            <h2>Select Your Pet</h2>
-            <div id="pet-grid">
-                <!-- Pet images will be added dynamically here -->
-            </div>
-        </div>
-
-        <div id="modifiers-container">
-            <h3>Modifiers</h3>
-            <!-- Modifiers will appear here based on selected pet -->
-        </div>
-
-        <div id="selected-pet-info">
-            <h3>Selected Pet</h3>
-            <p id="selected-pet-name">No pet selected</p>
-            <p><strong>Base Value: </strong>$<span id="base-value">0</span></p>
-            <p><strong>Total Value: </strong>$<span id="total-value">0</span></p>
+            <div id="pet-grid"></div> <!-- Grid to display pets -->
         </div>
     </div>
 
+    <script src="items.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
