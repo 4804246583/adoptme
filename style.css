@@ -1,4 +1,4 @@
-/* Basic reset for margins and paddings */
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -6,84 +6,126 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8d6f4;  /* Light pink background */
-    color: #5a3e72;  /* Dark pinkish text */
+    font-family: 'Arial', sans-serif;
+    background-color: #FCE4EC;  /* Soft pink background */
+    color: #5A2D6D;  /* Deep pink text color */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     text-align: center;
+    flex-direction: column;
 }
 
-#container {
-    background-color: #ffffff;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+#main-container {
     width: 90%;
-    max-width: 800px;
+    max-width: 1200px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-    color: #e91e63;  /* Bright pink color */
+header {
+    background-color: #EC407A;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
 }
 
-#pet-selection {
-    margin-top: 20px;
+header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
 }
 
-#pet-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+header p {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+#trade-container {
+    display: flex;
+    justify-content: space-between;
     gap: 20px;
-    justify-items: center;
+}
+
+#your-offer, #their-offer {
+    width: 45%;
+    background-color: #FF80AB;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+#your-offer h2, #their-offer h2 {
+    font-size: 24px;
+    color: #fff;
+}
+
+#your-offer-list, #their-offer-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.buttons {
     margin-top: 20px;
-}
-
-.pet {
-    background-color: #f1c4d5;  /* Light pink background for each pet */
-    border-radius: 10px;
-    padding: 10px;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.pet:hover {
-    transform: scale(1.05);
-}
-
-.pet-image {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-#modifiers-container {
-    margin-top: 30px;
 }
 
 button {
-    background-color: #e91e63;
+    background-color: #EC407A;
     color: white;
+    padding: 12px 20px;
+    font-size: 16px;
     border: none;
-    padding: 10px 20px;
-    margin: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.2s;
+    transition: background-color 0.3s ease;
+    margin: 5px;
 }
 
 button:hover {
-    background-color: #d81b60;
+    background-color: #D81B60;
 }
 
-#selected-pet-info {
-    margin-top: 20px;
+#pet-selection-menu, #modifier-selection-menu {
+    background-color: #FF80AB;
+    padding: 20px;
+    border-radius: 15px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    z-index: 10;
 }
 
-#selected-pet-name {
-    font-size: 24px;
-    font-weight: bold;
+#pet-selection-menu.hidden, #modifier-selection-menu.hidden {
+    display: none;
+}
+
+.modifier-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.modifier {
+    background-color: #F8BBD0;
+    color: #5A2D6D;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.modifier:hover {
+    background-color: #EC407A;
+    color: white;
+}
+
+footer {
+    margin-top: 50px;
+    font-size: 14px;
+    color: #7B1FA2;
 }
