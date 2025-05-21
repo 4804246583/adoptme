@@ -1,50 +1,28 @@
 <body>
-  <div id="main-container">
-    <header>
-      <h1>WFL Value Calculator</h1>
-      <p>Check if a trade is fair, over, or under based on pet values.</p>
-    </header>
+  <div class="container">
+    <h1>WFL Value Calculator</h1>
+    <p>Check if a trade is fair, over, or under based on pet values.</p>
 
-    <section id="trade-section">
-      <div class="offer-box" id="your-offer">
-        <h2>Your Offer</h2>
-        <ul class="pet-list" id="your-offer-list"></ul>
-        <button class="add-pet-btn" onclick="openPetMenu('your')">+ Add Pet</button>
-        <div id="your-score" class="score-display"></div>
-      </div>
-
-      <div id="result-box">
-        <p>WFL Score:</p>
-        <strong id="trade-result">—</strong>
-      </div>
-
-      <div class="offer-box" id="their-offer">
-        <h2>Their Offer</h2>
-        <ul class="pet-list" id="their-offer-list"></ul>
-        <button class="add-pet-btn" onclick="openPetMenu('their')">+ Add Pet</button>
-        <div id="their-score" class="score-display"></div>
-      </div>
-    </section>
-
-    <!-- Pet Selection Modal -->
-    <div id="pet-selection-menu" class="hidden">
-      <div class="modal-content">
-        <h2>Select a Pet</h2>
-        <div id="pet-grid">
-          <!-- Example pet -->
-          <div class="pet-option" data-name="Aussie Egg" data-value="500">
-            <div class="pet-name">Aussie Egg</div>
-            <div class="pet-value">Base Value: $500</div>
-          </div>
-
-          <!-- Add all pets here -->
-        </div>
-        <button onclick="closePetMenu()">Close</button>
-      </div>
+    <div class="offer-section">
+      <h2>Your Offer</h2>
+      <button>+ Add Pet</button>
     </div>
 
-    <footer>
-      <p>© 2025 WFL Value Calculator | Not affiliated with Roblox or Adopt Me</p>
+    <div id="wfl-score">WFL Score: —</div>
+
+    <div class="offer-section">
+      <h2>Their Offer</h2>
+      <button>+ Add Pet</button>
+    </div>
+
+    <div id="pet-selection-menu">
+      <h2>Select a Pet</h2>
+      <div id="pet-grid"></div>
+      <button onclick="closePetMenu()">Close</button>
+    </div>
+
+    <footer style="margin-top: 40px; text-align: center; font-size: 14px;">
+      © 2025 WFL Value Calculator | Not affiliated with Roblox or Adopt Me
     </footer>
   </div>
 </body>
