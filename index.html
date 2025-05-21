@@ -3,15 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pet Selection</title>
+    <title>Pet Trade - Adopt Me</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="container">
-        <h1>Select Your Pet</h1>
-        <div id="pet-selection">
-            <div id="pet-grid"></div> <!-- Grid to display pets -->
+    <div id="main-container">
+        <header>
+            <h1>Pet Trade - Adopt Me</h1>
+            <p>Trade your pets with adorable modifiers! Select your offer and then choose their offer.</p>
+        </header>
+
+        <div id="trade-container">
+            <!-- Your Offer Section -->
+            <div id="your-offer">
+                <h2>Your Offer</h2>
+                <ul id="your-offer-list"></ul>
+                <div class="buttons">
+                    <button id="add-pet-btn">Add Pet</button>
+                </div>
+            </div>
+
+            <!-- Trade Actions -->
+            <div id="trade-actions">
+                <div class="buttons">
+                    <button id="select-pet-btn">Select Pet</button>
+                    <button id="select-modifiers-btn">Select Modifiers</button>
+                </div>
+            </div>
+
+            <!-- Their Offer Section -->
+            <div id="their-offer">
+                <h2>Their Offer</h2>
+                <ul id="their-offer-list"></ul>
+            </div>
         </div>
+
+        <!-- Pet Selection Menu (hidden initially) -->
+        <div id="pet-selection-menu" class="hidden">
+            <h3>Select a Pet</h3>
+            <div id="pet-grid"></div>
+            <button id="close-pet-menu">Close</button>
+        </div>
+
+        <!-- Modifier Selection Menu (hidden initially) -->
+        <div id="modifier-selection-menu" class="hidden">
+            <h3>Select Modifiers</h3>
+            <div class="modifier-buttons">
+                <button class="modifier" id="modifier-ride">Ride</button>
+                <button class="modifier" id="modifier-fly">Fly</button>
+                <button class="modifier" id="modifier-neon">Neon</button>
+                <button class="modifier" id="modifier-mega">Mega</button>
+            </div>
+            <button id="close-modifier-menu">Close</button>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Pet Trade. All Rights Reserved.</p>
+        </footer>
     </div>
 
     <script src="items.js"></script>
