@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>WFL Value Calculator</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
 <body>
   <div id="main-container">
     <header>
@@ -13,42 +5,46 @@
       <p>Check if a trade is fair, over, or under based on pet values.</p>
     </header>
 
-    <div id="trade-section">
-      <!-- Your Offer Section -->
-      <section class="offer-box">
+    <section id="trade-section">
+      <div class="offer-box" id="your-offer">
         <h2>Your Offer</h2>
-        <ul id="your-offer-list" class="pet-list"></ul>
-        <button class="add-pet-btn" data-side="your">+ Add Pet</button>
-      </section>
-
-      <!-- Value Score Result -->
-      <div id="result-box">
-        <h3 id="trade-result">WFL Score: —</h3>
+        <ul class="pet-list" id="your-offer-list"></ul>
+        <button class="add-pet-btn" onclick="openPetMenu('your')">+ Add Pet</button>
+        <div id="your-score" class="score-display"></div>
       </div>
 
-      <!-- Their Offer Section -->
-      <section class="offer-box">
+      <div id="result-box">
+        <p>WFL Score:</p>
+        <strong id="trade-result">—</strong>
+      </div>
+
+      <div class="offer-box" id="their-offer">
         <h2>Their Offer</h2>
-        <ul id="their-offer-list" class="pet-list"></ul>
-        <button class="add-pet-btn" data-side="their">+ Add Pet</button>
-      </section>
-    </div>
+        <ul class="pet-list" id="their-offer-list"></ul>
+        <button class="add-pet-btn" onclick="openPetMenu('their')">+ Add Pet</button>
+        <div id="their-score" class="score-display"></div>
+      </div>
+    </section>
 
     <!-- Pet Selection Modal -->
     <div id="pet-selection-menu" class="hidden">
       <div class="modal-content">
-        <h3>Select a Pet</h3>
-        <div id="pet-grid"></div>
-        <button id="close-pet-menu">Close</button>
+        <h2>Select a Pet</h2>
+        <div id="pet-grid">
+          <!-- Example pet -->
+          <div class="pet-option" data-name="Aussie Egg" data-value="500">
+            <div class="pet-name">Aussie Egg</div>
+            <div class="pet-value">Base Value: $500</div>
+          </div>
+
+          <!-- Add all pets here -->
+        </div>
+        <button onclick="closePetMenu()">Close</button>
       </div>
     </div>
 
     <footer>
-      <p>&copy; 2025 WFL Value Calculator | Not affiliated with Roblox or Adopt Me</p>
+      <p>© 2025 WFL Value Calculator | Not affiliated with Roblox or Adopt Me</p>
     </footer>
   </div>
-
-  <script src="items.js"></script>
-  <script src="script.js"></script>
 </body>
-</html>
