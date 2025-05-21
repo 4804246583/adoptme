@@ -1,46 +1,89 @@
-/* Styling for the Pet Selection Grid */
+/* Basic reset for margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8d6f4;  /* Light pink background */
+    color: #5a3e72;  /* Dark pinkish text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+#container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+}
+
+h1 {
+    color: #e91e63;  /* Bright pink color */
+}
+
+#pet-selection {
+    margin-top: 20px;
+}
+
 #pet-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3x3 grid */
-    gap: 10px;
-    margin: 20px 0;
-}
-
-.pet-image img {
-    width: 100px;
-    height: 100px;
-    cursor: pointer;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.pet-image p {
-    text-align: center;
-    font-size: 14px;
-    margin-top: 5px;
-}
-
-/* Modifiers */
-#modifiers-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-items: center;
     margin-top: 20px;
-    padding: 10px;
 }
 
-#modifiers-container button {
-    margin: 5px;
+.pet {
+    background-color: #f1c4d5;  /* Light pink background for each pet */
+    border-radius: 10px;
     padding: 10px;
-    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.pet:hover {
+    transform: scale(1.05);
+}
+
+.pet-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+#modifiers-container {
+    margin-top: 30px;
+}
+
+button {
+    background-color: #e91e63;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
     cursor: pointer;
     border-radius: 5px;
-    background-color: #ff66b2;
-    color: white;
+    transition: background-color 0.2s;
 }
 
-#modifiers-container button:hover {
-    background-color: #ff3385;
+button:hover {
+    background-color: #d81b60;
 }
 
-#modifiers-container p {
-    font-size: 18px;
+#selected-pet-info {
+    margin-top: 20px;
+}
+
+#selected-pet-name {
+    font-size: 24px;
     font-weight: bold;
 }
