@@ -1,55 +1,46 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #ffeef8;
-  color: #333;
-  margin: 0;
-  padding: 20px;
+/* Styling for the Pet Selection Grid */
+#pet-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3x3 grid */
+    gap: 10px;
+    margin: 20px 0;
 }
-.container {
-  max-width: 800px;
-  margin: auto;
-  background-color: #fff0f5;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(255, 182, 193, 0.5);
+
+.pet-image img {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-h1 {
-  text-align: center;
-  color: #d63384;
+
+.pet-image p {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 5px;
 }
-.trade-panels {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
+
+/* Modifiers */
+#modifiers-container {
+    margin-top: 20px;
+    padding: 10px;
 }
-.trade-panel {
-  width: 45%;
-  background-color: #ffe4ec;
-  padding: 15px;
-  border-radius: 10px;
+
+#modifiers-container button {
+    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #ff66b2;
+    color: white;
 }
-.items {
-  margin-bottom: 10px;
+
+#modifiers-container button:hover {
+    background-color: #ff3385;
 }
-.item-row {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 5px;
-}
-button {
-  background-color: #ff69b4;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-button:hover {
-  background-color: #ff85c1;
-}
-#result {
-  text-align: center;
-  font-size: 24px;
-  margin-top: 20px;
-  color: #d63384;
+
+#modifiers-container p {
+    font-size: 18px;
+    font-weight: bold;
 }
