@@ -1,46 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pet Trade - Adopt Me</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WFL Value Calculator</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div id="main-container">
-        <header>
-            <h1>Pet Trade - Adopt Me</h1>
-            <p>Trade your pets with adorable modifiers! Select your offer and then choose their offer.</p>
-        </header>
+  <div id="main-container">
+    <header>
+      <h1>WFL Value Calculator</h1>
+      <p>Check if a trade is fair, over, or under based on pet values.</p>
+    </header>
 
-        <div id="trade-container">
-            <!-- Your Offer Section -->
-            <div id="your-offer">
-                <h2>Your Offer</h2>
-                <ul id="your-offer-list"></ul>
-                <button id="add-pet-btn">Add Pet</button> <!-- Button to Add Pet -->
-            </div>
+    <div id="trade-section">
+      <!-- Your Offer Section -->
+      <section class="offer-box">
+        <h2>Your Offer</h2>
+        <ul id="your-offer-list" class="pet-list"></ul>
+        <button class="add-pet-btn" data-side="your">+ Add Pet</button>
+      </section>
 
-            <!-- Their Offer Section -->
-            <div id="their-offer">
-                <h2>Their Offer</h2>
-                <ul id="their-offer-list"></ul>
-            </div>
-        </div>
+      <!-- Value Score Result -->
+      <div id="result-box">
+        <h3 id="trade-result">WFL Score: —</h3>
+      </div>
 
-        <!-- Pet Selection Menu (hidden initially) -->
-        <div id="pet-selection-menu" class="hidden">
-            <h3>Select a Pet</h3>
-            <div id="pet-grid"></div>
-            <button id="close-pet-menu">Close</button>
-        </div>
-
-        <footer>
-            <p>&copy; 2025 Pet Trade. All Rights Reserved.</p>
-        </footer>
+      <!-- Their Offer Section -->
+      <section class="offer-box">
+        <h2>Their Offer</h2>
+        <ul id="their-offer-list" class="pet-list"></ul>
+        <button class="add-pet-btn" data-side="their">+ Add Pet</button>
+      </section>
     </div>
 
-    <script src="items.js"></script>
-    <script src="script.js"></script>
+    <!-- Pet Selection Modal -->
+    <div id="pet-selection-menu" class="hidden">
+      <div class="modal-content">
+        <h3>Select a Pet</h3>
+        <div id="pet-grid"></div>
+        <button id="close-pet-menu">Close</button>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 WFL Value Calculator | Not affiliated with Roblox or Adopt Me</p>
+    </footer>
+  </div>
+
+  <script src="items.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
