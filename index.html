@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adopt Me Trade Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Adopt Me Trade Calculator</h1>
+    <div class="trade-panels">
+      <div class="trade-panel">
+        <h2>Your Offer</h2>
+        <div class="items" id="yourItems"></div>
+        <button onclick="addItem('your')">Add Item</button>
+      </div>
+      <div class="trade-panel">
+        <h2>Their Offer</h2>
+        <div class="items" id="theirItems"></div>
+        <button onclick="addItem('their')">Add Item</button>
+      </div>
+    </div>
+    <button onclick="calculateTrade()">Calculate Trade</button>
+    <div id="result"></div>
+  </div>
+  <script src="items.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
